@@ -44,6 +44,7 @@ velocity_last_24h
 device_trust_score
 
 🔧 Proceso de análisis
+
 1️⃣ Limpieza y preparación de datos
 
 Corrección de tipos de datos (fechas, numéricos y categóricos).

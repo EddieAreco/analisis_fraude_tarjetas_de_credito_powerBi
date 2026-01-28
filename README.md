@@ -1,11 +1,6 @@
 # 📊 Análisis de Fraude de tarjetas de crédito con Power BI
-🧠 Descripción general
 
-Este proyecto presenta un dashboard de análisis de fraude con tarjetas de crédito, desarrollado solamente en Power BI, con el objetivo de identificar patrones de comportamiento fraudulento, medir su impacto económico y facilitar la toma de decisiones basada en datos.
-
-El análisis se construyó a partir de un dataset transaccional (Kaggle) y abarca todo el ciclo típico del trabajo de un Analista de Datos: exploración, limpieza, modelado, creación de métricas, visualización y storytelling.
-
-🎯 Objetivos del proyecto
+## 📌 Objetivo del proyecto
 
 Identificar patrones de fraude en transacciones con tarjeta.
 
@@ -17,7 +12,14 @@ Segmentar transacciones por niveles de riesgo.
 
 Construir un dashboard claro, accionable y orientado a negocio.
 
-🗂️ Dataset
+## 🧠 Descripción general
+
+Este proyecto presenta un dashboard de análisis de fraude con tarjetas de crédito, desarrollado solamente en Power BI, con el objetivo de identificar patrones de comportamiento fraudulento, medir su impacto económico y facilitar la toma de decisiones basada en datos.
+
+El análisis se construyó a partir de un dataset transaccional (Kaggle) y abarca todo el ciclo típico del trabajo de un Analista de Datos: exploración, limpieza, modelado, creación de métricas, visualización y storytelling.
+
+
+## 🗂️ Dataset
 
 Origen: Kaggle – Credit Card Fraud Detection Dataset
 
@@ -43,7 +45,7 @@ velocity_last_24h
 
 device_trust_score
 
-🔧 Proceso de análisis
+## 🔧 Proceso de análisis
 
 1️⃣ Limpieza y preparación de datos
 
@@ -103,7 +105,17 @@ Riesgo Medio
 
 Alta Sospecha
 
-📈 Dashboard – Principales visualizaciones
+## 🛠️ Herramientas utilizadas
+
+Power BI
+
+DAX
+
+Power Query
+
+Google sheets (exploración inicial)
+
+## 📈 Dashboard – Principales visualizaciones
 
 El dashboard incluye:
 
@@ -139,37 +151,17 @@ Cantidad de fraudes según nivel de riesgo
 
 Monto total involucrado por nivel de riesgo
 
-💡 Insights destacados
+## 🎯 Decisiones de Diseño
 
-Una gran proporción de fraudes se concentra en montos bajos y medios, lo que sugiere intentos de pasar desapercibidos.
+## 🚀 Conclusiones principales
 
-Determinadas categorías comerciales presentan mayor tasa de fraude relativa pero son muy parejas y las diferencias porcentuales son mínimas.
+Una gran proporción de fraudes se concentra en montos bajos y medios, lo que sugiere intentos de pasar desapercibidos. Como análisis personal, a medida que los montos superan los $35304.96, la cantidad de fraudes va disminuyendo notoriamente.
 
-Existen horarios con picos claros de actividad fraudulenta.
+La categoría comercial de "Food" presenta mayor tasa de fraude con un 20,96% pero las diferencias porcentuales entre todas las categorías son mínimas y muy parejas no llegando a superar el 2% entre una y su sub siguiente.
 
-La combinación de múltiples señales de riesgo mejora significativamente la detección.
+Los horarios de las 14 hs y 18 hs presentan picos claros de actividad fraudulenta.
 
-🛠️ Herramientas utilizadas
-
-Power BI
-
-DAX
-
-Power Query
-
-Google sheets (exploración inicial)
-
-🎯 Perfil profesional
-
-Este proyecto refleja habilidades propias de un Analista de Datos:
-
-Pensamiento analítico
-
-Enfoque orientado a negocio
-
-Capacidad de transformar datos en insights
-
-Construcción de dashboards claros y accionables
+La combinación de múltiples señales de riesgo como el tipo de transacción, la ubicación y la velocidad, mejora significativamente la detección de fraudes.
 
 📌 Notas finales
 

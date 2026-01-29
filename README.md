@@ -4,7 +4,8 @@ Dashboard interactivo desarrollado en Power BI para analizar el comportamiento d
 
 El análisis se enfoca en cuánto fraude existe, cuándo ocurre, dónde se concentra y bajo qué condiciones, utilizando métricas claras y visualizaciones orientadas al negocio.
 
-<img width="1561" height="864" alt="Captura de pantalla 2026-01-29 112136" src="https://github.com/user-attachments/assets/420f8f40-58a8-4091-b9e0-1e1ceef195ac" />
+<img width="1341" height="735" alt="image" src="https://github.com/user-attachments/assets/efa8751d-2aba-4dd2-b763-531a99ec6fe4" />
+
 
 ## 📌 Objetivo del proyecto
 

@@ -4,7 +4,7 @@ Dashboard interactivo desarrollado en Power BI para analizar el comportamiento d
 
 El análisis se enfoca en cuánto fraude existe, cuándo ocurre, dónde se concentra y bajo qué condiciones, utilizando métricas claras y visualizaciones orientadas al negocio.
 
-<img width="1341" height="735" alt="image" src="https://github.com/user-attachments/assets/efa8751d-2aba-4dd2-b763-531a99ec6fe4" />
+<img width="1322" height="735" alt="image" src="https://github.com/user-attachments/assets/8c4a6f03-ba90-4b9a-9784-efd2f382b42c" />
 
 
 ## 📌 Objetivo del proyecto
@@ -79,7 +79,23 @@ velocity_last_24h
 
 device_trust_score
 
-A partir de estos datos se agregó la columna "risk_categories" que categoriza las transacciones mediante una fórmula SWITCH en la cual según ciertos parámetros, se dividen las categorías de riesgo en "Normal", "Riesgo Bajo", "Riesgo Medio" y "Riesgo Alto"; y se calculó la métrica de % Fraud
+A partir de estos datos se agregó la columna "risk_categories" que categoriza las transacciones mediante una fórmula SWITCH en la cual según ciertos parámetros, se dividen las categorías de riesgo en "Normal", "Riesgo Bajo", "Riesgo Medio" y "Riesgo Alto"; y se calcularon las siguientes métricas que fueron ingresadas en una tabla aparte para una mejor práctica:
+
+Amount frauds
+Amount legitimate transactions
+Average fraud ticket
+Average legitimate ticket
+F1 Score
+False negative
+False positive
+Fraud percentage
+Precision
+Recall
+Total frauds
+Total legitimate transactions
+Total transactions
+True negatives
+True positive
 
 El volumen y la granularidad del dataset permiten realizar análisis:
 

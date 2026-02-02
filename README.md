@@ -82,19 +82,33 @@ device_trust_score
 A partir de estos datos se agregó la columna "risk_categories" que categoriza las transacciones mediante una fórmula SWITCH en la cual según ciertos parámetros, se dividen las categorías de riesgo en "Normal", "Riesgo Bajo", "Riesgo Medio" y "Riesgo Alto"; y se calcularon las siguientes métricas que fueron ingresadas en una tabla aparte para una mejor práctica:
 
 Amount frauds
+
 Amount legitimate transactions
+
 Average fraud ticket
+
 Average legitimate ticket
+
 F1 Score
+
 False negative
+
 False positive
+
 Fraud percentage
+
 Precision
+
 Recall
+
 Total frauds
+
 Total legitimate transactions
+
 Total transactions
+
 True negatives
+
 True positive
 
 El volumen y la granularidad del dataset permiten realizar análisis:

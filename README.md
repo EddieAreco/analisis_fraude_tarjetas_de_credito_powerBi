@@ -250,13 +250,13 @@ El dashboard fue pensado para ser explorable, permitiendo al usuario filtrar y a
 
 ## 🚀 Conclusiones principales
 
-Una gran proporción de fraudes se concentra en montos bajos y medios, lo que sugiere intentos de pasar desapercibidos. Como análisis personal, a medida que los montos superan los $35304.96, la cantidad de fraudes va disminuyendo notoriamente.
+Una gran proporción de fraudes se concentra en montos bajos y medios, lo que sugiere intentos de pasar desapercibidos. Es muy importante tener en cuenta que casi el 40% de los fraudes (59 sobre 148 fraudes en total) se dan en montos inferiores a $5884
 
-La categoría comercial de "Food" presenta mayor tasa de fraude con un 20,96% pero las diferencias porcentuales entre todas las categorías son mínimas y muy parejas no llegando a superar el 2% entre una y su sub siguiente.
+La categoría comercial de "Grosery" presenta mayor tasa de fraude con un 2,01%. Entre "Food" y "Grosery" se concentran un 49,3% del total de casos de fraudes
 
-Los horarios de las 14 hs y 18 hs presentan picos claros de actividad fraudulenta.
+Los horarios donde se presentan picos claros de actividad fraudulenta son entre las 00 hs y las 03 hs acumulando el 86,48% del total de fraudes.
 
-La combinación de múltiples señales de riesgo como el tipo de transacción, la ubicación y la velocidad, mejora significativamente la detección de fraudes.
+La combinación de múltiples señales de riesgo como el tipo de transacción, la ubicación, la velocidad el puntaje del dispositivo y el monto de la operación, mejora significativamente la detección de fraudes.
 
 📌 Notas finales
 

@@ -159,25 +159,48 @@ SWITCH
 
 FILTER
 
-3️⃣ Segmentación de riesgo
+3️⃣ ## 🧮 Sistema de Scoring de Riesgo
 
-Se construyó una clasificación de riesgo combinando variables clave:
+Para clasificar las transacciones según su nivel de riesgo, se diseñó un **sistema de scoring aditivo** que asigna puntos según señales de fraude conocidas:
 
-Transacción internacional
+### Variables y pesos utilizados:
 
-Discrepancia de ubicación
+| Variable | Condición | Puntos |
+|----------|-----------|--------|
+| **Transacción internacional** | foreign_transaction = 1 | +30 |
+| **Discrepancia de ubicación** | location_mismatch = 1 | +20 |
+| **Velocidad alta** | velocity_last_24h ≥ 5 | +30 |
+| **Velocidad media** | velocity_last_24h ≥ 3 | +15 |
+| **Velocidad baja** | velocity_last_24h ≥ 2 | +5 |
+| **Dispositivo sospechoso** | device_trust_score ≤ 30 | +30 |
+| **Dispositivo de riesgo** | device_trust_score ≤ 45 | +20 |
+| **Dispositivo no confiable** | device_trust_score ≤ 60 | +5 |
+| **Monto elevado** | amount > $30,000 | +10 |
 
-Velocidad de transacciones en las últimas 24 hs
+### Categorización por umbrales:
 
-Niveles definidos:
+- **Alta sospecha** (≥85 puntos): Múltiples señales fuertes → Revisión inmediata
+- **Riesgo Alto** (≥70 puntos): 2-3 señales importantes → Revisión prioritaria
+- **Riesgo Medio** (≥55 puntos): 1-2 señales moderadas → Monitoreo
+- **Riesgo Bajo** (≥40 puntos): Señal débil → Seguimiento rutinario
+- **Normal** (<40 puntos): Sin señales de alerta
 
-Normal
+### Resultados del modelo:
 
-Riesgo Bajo
+| Categoría | Transacciones | Fraudes | Tasa de fraude | Acción |
+|-----------|---------------|---------|----------------|--------|
+| Alta sospecha | 23 | 14 | **60.9%** | 🔴 Bloqueo/Revisión |
+| Riesgo Alto | 87 | 47 | **54.0%** | 🟠 Revisión manual |
+| Riesgo Medio | 388 | 51 | **13.1%** | 🟡 Monitoreo |
+| Riesgo Bajo | 928 | 33 | **3.6%** | 🟢 Seguimiento |
+| Normal | 8,249 | 3 | **0.04%** | ✅ Aprobado |
 
-Riesgo Medio
+**Métricas de rendimiento:**
+- **Precision: 22.5%** → De cada 100 alertas, 22 son fraudes reales
+- **Recall: 75.7%** → Se detecta el 76% de los fraudes
+- **F1 Score: 34.7%** → Balance razonable entre precisión y cobertura
 
-Alta Sospecha
+Este enfoque permite **reducir en 94% el volumen de transacciones a revisar manualmente** (de 9,675 a 498), manteniendo una tasa de detección del 76%.
 
 ## 🛠️ Herramientas utilizadas
 
@@ -237,7 +260,7 @@ Muestra cómo se distribuyen las transacciones fraudulentas entre los distintos 
 
 👉 Este conjunto de visualizaciones permite detectar patrones potencialmente anómalos y segmentar transacciones según su nivel de exposición al fraude.
 
-🎯 Decisiones de diseño
+## 🎯 Decisiones de diseño
 
 Se priorizó el uso de gráficos claros y comparables, evitando sobrecargar el dashboard.
 
@@ -257,6 +280,11 @@ La categoría comercial de "Grosery" presenta mayor tasa de fraude con un 2,01%.
 Los horarios donde se presentan picos claros de actividad fraudulenta son entre las 00 hs y las 03 hs acumulando el 86,48% del total de fraudes.
 
 La combinación de múltiples señales de riesgo como el tipo de transacción, la ubicación, la velocidad el puntaje del dispositivo y el monto de la operación, mejora significativamente la detección de fraudes.
+Debido a las limitaciones del análisis, hay variables no consideradas que ayudarían a una mejor precisión del modelo como historial del cliente, patrón de gasto habitual o ubicación geográfica
+Los pesos asignados en el sistema de scoring fueron definidos analíticamente. En un contexto real, deberían ajustarse con:
+   - Machine Learning (modelos supervisados)
+   - Feedback del equipo de prevención de fraude
+   - Análisis de costos de falsos positivos vs falsos negativos
 
 📌 Notas finales
 
